@@ -271,8 +271,7 @@ def dict2xml(root, escape_xml=False):
                     .format(**{'xml': str(xml), 'tag': key, 'value': smart_encode(value)})
 
     elif isinstance(root, str) or isinstance(root, int) \
-            or isinstance(root, float) or isinstance(root, long) \
-            or isinstance(root, unicode):
+            or isinstance(root, float) or isinstance(root, long):
         xml = str('{0}{1}').format(str(xml), smart_encode(root))
     else:
         raise Exception('Unable to serialize node of type %s (%s)' %
